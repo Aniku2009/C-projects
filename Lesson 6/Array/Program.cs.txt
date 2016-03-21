@@ -1,0 +1,53 @@
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Insertion_Name
+{
+         
+    class Program
+    {
+        static void Main()
+        {
+            //int ArraySize = 0;
+            int[] arrInt = new int[4];
+
+            Sorter_Superclass myInputData = new Sorter_Superclass(arrInt);
+            /*
+            Console.WriteLine("Please enter array size");
+            do
+            {
+                ArraySize = myInputData.InputNumber ();
+                if (ArraySize <= 0)
+                Console.WriteLine("Cannot be zero or less. Try again");
+             }
+            while (ArraySize <= 0);
+
+            */
+
+            for (int i = 0; i < arrInt.Length; i++)
+            {
+                Console.WriteLine("Please enter {0} value and press ENTER", i);
+                int ArrayValue = myInputData.InputNumber();
+                arrInt[i] = ArrayValue;
+            }
+
+            Console.WriteLine("Unsorted array");
+            myInputData.Print();
+            myInputData.Sorting();
+
+            Console.WriteLine("Sorted array by bubble");
+            Bubble_Derived bubbleprint = new Bubble_Derived(arrInt);
+            bubbleprint.Sorting();
+            bubbleprint.Print();
+
+            Console.WriteLine("Sorted array by Insertion");
+            Insertion_Derived insertionprint = new Insertion_Derived(arrInt);
+            bubbleprint.Sorting();
+            bubbleprint.Print();
+            Console.ReadKey();
+        }  
+    }
+}

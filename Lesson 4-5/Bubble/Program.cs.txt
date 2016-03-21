@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bubble_Array
+{
+         
+    class Program
+    {
+        static void Main()
+        {
+            //int ArraySize = 0;
+            int[] arrInt = new int[4];
+
+            Bubble myInputData = new Bubble(arrInt);
+            /*
+            Console.WriteLine("Please enter array size");
+            do
+            {
+                ArraySize = myInputData.InputNumber ();
+                if (ArraySize <= 0)
+                Console.WriteLine("Cannot be zero or less. Try again");
+             }
+            while (ArraySize <= 0);
+
+            */
+
+            for (int i = 0; i < arrInt.Length; i++)
+            {
+                Console.WriteLine("Please enter {0} value and press ENTER", i);
+                int ArrayValue = myInputData.InputNumber();
+                arrInt[i] = ArrayValue;
+            }
+
+            Console.WriteLine("Unsorted arrat");
+            myInputData.Print();
+
+            myInputData.Sorting();
+
+            Console.WriteLine("Sorted arrat");
+            myInputData.Print();
+            Console.ReadKey();
+        }  
+    }
+}

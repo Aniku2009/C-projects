@@ -1,0 +1,30 @@
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Insertion_Name
+{
+    class Bubble_Derived : Sorter_Superclass
+     
+        {
+        public Bubble_Derived(int[] arrayInt) : base(arrayInt)
+        { }
+            public override void Sorting()
+            {
+                int i, j;
+
+                for (i = 0; i < arrayInt.Length - 1; i++)
+                {
+                    for (j = i + 1; j < 4; j++)
+                    {
+                        if (arrayInt[i] > arrayInt[j])
+                        {
+                            Swap(ref arrayInt[i], ref  arrayInt[j]);
+                        }
+                    }
+                }
+            }
+        }
+}

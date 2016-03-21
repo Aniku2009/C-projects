@@ -1,0 +1,35 @@
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Insertion_Name
+{
+    class Insertion_Derived : Sorter_Superclass
+     
+        {
+       
+        public Insertion_Derived (int[] arrayInt) : base (arrayInt)
+        {}
+        public override void Sorting ()
+                {
+                    int i;
+
+
+                    for (i = 0; i < arrayInt.Length; i++)
+                    {
+                        int temp = arrayInt[i];
+                        int j = i - 1;
+                        while (j >= 0 && arrayInt[j] > temp)
+                        {
+                            arrayInt[j + 1] = arrayInt[j];
+                        
+                            j--;
+                        }
+                        arrayInt[j + 1] = temp;
+                     
+                    }
+                }
+        }
+}

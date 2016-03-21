@@ -1,0 +1,53 @@
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Stack_Queue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          Console.WriteLine("Working with Stack");
+            Console.WriteLine();
+            MyStack NewStack = new MyStack(4);
+            NewStack.Push(1);
+            NewStack.Push(2);
+            NewStack.Push(3);
+            NewStack.Push(4);
+            NewStack.Push(5);
+            NewStack.Print();
+            NewStack.Peek();
+            NewStack.Pop();
+            NewStack.Peek();
+            NewStack.Pop();
+            NewStack.Peek();
+            NewStack.Pop();
+            NewStack.Print();
+            Console.WriteLine();
+            
+
+            // Crete queue  
+            Console.WriteLine("Working with Queue");
+            Console.WriteLine();
+            MyQueue NewQueue = new MyQueue(4);
+            NewQueue.Push(101);
+            NewQueue.Push(102);
+            NewQueue.Push(103);
+            NewQueue.Push(104);
+            NewQueue.Push(105);
+            NewQueue.Print();
+            NewQueue.Pop();
+            NewQueue.Push(106);
+            NewQueue.Print();
+            NewQueue.Pop();
+            NewQueue.Print();
+            NewQueue.Pop();
+            NewQueue.Pop();
+            NewQueue.Pop();
+            Console.ReadKey();
+        }
+    }
+}
