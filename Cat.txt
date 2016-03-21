@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Session3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat Murzik = new Cat("Murzik", "White");
+            Cat Murzik2 = new Cat("Murzik", "White");
+
+            Console.WriteLine("Cat named {0} is of color - {1}", Murzik.Name, Murzik.Color);
+
+            RepaintCat(Murzik, "Pink");
+
+            Console.WriteLine("Cat named {0} is of color - {1}", Murzik.Name, Murzik.Color);
+
+            /* int someVariable = 10;
+             int anotherVariable = 10;
+             Console.WriteLine("Some Variable is {0}, another variable is {1}", someVariable, anotherVariable);
+             incrementBy100(ref someVariable, ref anotherVariable);
+             Console.WriteLine("Some Variable is {0}, another variable is {1}", someVariable, anotherVariable);
+
+             object o = someVariable;
+             int weBelieveItisINT = (int)o;
+
+             if(Murzik.Name == Murzik2.Name)
+             {
+                 Console.WriteLine("Same Murzik");
+             }
+
+             int[] array = new int[5] {5, 3, 1, 5, 1};
+
+             for (int i = 0; i < array.Length; i++)
+             {
+                 Console.WriteLine(array[i]);
+             }*/
+        }
+
+        static void RepaintCat(Cat cat, string Color)
+        {
+            cat.Color = Color;
+
+            //}
+
+            //public static void incrementBy100(ref int digit, ref int anotherValue)
+            //{
+            //  digit += anotherValue;
+            //anotherValue = digit;
+            //}
+        }
+
+        public class Cat
+        {
+            public string Name { get; set; }
+            public string Color { get; set; }
+
+            public Cat(string name, string color)
+            {
+                Name = name;
+                Color = color;
+                
+            }
+       
+        }
+  
+    }
+}
