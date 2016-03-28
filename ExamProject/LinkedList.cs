@@ -11,72 +11,79 @@ namespace ExamProject
     {
         Node<T> node = null;
         int size = 0;
-        public void AddFirst(T value)  // add node to the first place;
+
+
+        public void AddFirst(T value)  
         {
+            size++;
             if (node == null)
             {
                 node = new Node<T>(null, value, null);
-                size++;
             }
             else
             {
-                Node<T> temp = new Node<T>(null, value, node);
-                node.prevNode = temp;
-                size++;
+                Node<T> temp = new Node<T>(null, value, First());
+                First().prevNode = temp;
             }
         }
-        public void AddLast(T value)  // add node to the last place;
+
+
+        public void AddLast(T value)  
         {
+            size++;
             if (node == null)
             {
-                return;
+                node = new Node<T>(null, value, null);
             }
             else
             {
-                Node<T> temp = new Node<T>(node, value, null);
-                node.prevNode = temp;
-                size++;
+                Node<T> temp = new Node<T>(Last(), value, null);
+                Last().nextNode = temp;
             }
-
         }
 
 
         public void Remove(T value)
         {
-            while (true)
+            node = First();
+            if (node == null)
             {
-                if (node.nodeData.Equals(value))
-                {
-                    break;
-                }
-                else 
-                {
-                    Console.WriteLine("Nothig to delete");
-                }
-                node = node.prevNode;
-            }
-
-            if (node.prevNode == null)
-            {
-                RemoveFirst();
-            }
-            else if (node.nextNode == null)
-            {
-                RemoveLast();
+                Console.WriteLine("Nothing to delete");
             }
             else
             {
-                T tempnext = node.nextNode.prevNode.nodeData;
-                T tempprev = node.prevNode.nextNode.nodeData;
-
-                node = node.nextNode.prevNode;
-                node.nodeData =tempnext;
-
-                node = node.prevNode.nextNode;
-                node.nodeData = tempprev;
+                while (true)
+                {
+                    if (node.nodeData.Equals(value))
+                    {
+                        if (node.prevNode == null)
+                        {
+                            RemoveFirst();
+                        }
+                        else if (node.nextNode == null)
+                        {
+                            RemoveLast();
+                        }
+                        else
+                        {
+                            Node<T> temp = node.nextNode;
+                            node.nextNode.prevNode = node.prevNode;
+                            node.prevNode.nextNode = node.nextNode;
+                            node.prevNode.nextNode = temp;
+                            size--;
+                            break;
+                        }
+                    }
+                    else if (node.prevNode == null)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        node = node.prevNode;
+                    }
+                }
             }
-
-
         }
 
 
@@ -103,6 +110,29 @@ namespace ExamProject
                 }
             }
         }
+        //
+        //{
+        //        while (true)
+        //    {
+        //        if (node == null)
+        //        {
+        //            break;
+        //        }
+        //        else if (node.prevNode == null)
+        //        {
+        //            Node<T> temp = node.prevNode;
+        //            node.nextNode.prevNode = null;
+        //            //node.prevNode.nextNode = node.nextNode;
+        //            node.nextNode.prevNode = temp;
+        //            size--;
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            node = node.prevNode;
+        //        }
+        //    }
+        //}
         public void RemoveLast()
         {
             while (true)
@@ -113,7 +143,7 @@ namespace ExamProject
                 }
                 else if (node.nextNode == null)
                 {
-                    node.nextNode.prevNode = null;
+                    node.prevNode.nextNode = null;
                     node = node.prevNode;
                     size--;
                     break;
@@ -124,13 +154,15 @@ namespace ExamProject
                 }
             }
         }
+        //
        
         public bool Find(T value)
         {
-            node = Last();
+            
             if (node == null)
             {
 
+                Console.WriteLine("----Can't find the value because list is empty----");
                 return false;
             }
             else
@@ -139,16 +171,19 @@ namespace ExamProject
                 {
                     if (node.nodeData.Equals(value))
                     {
+                        Console.WriteLine("----Looked value exists in the list----");
                         return true;
                     }
                     else if (node.prevNode == null)
                     {
+                        Console.WriteLine("----Looked value doesn't exist in the list----");
                         return false;
                     }
                     else
                     {
                         node = node.prevNode;
                     }
+                
                 }
             }
         }
@@ -159,6 +194,7 @@ namespace ExamProject
 
        public  Node<T> First()
         {
+           
             while (true)
             {
                 if (node == null)
@@ -196,7 +232,7 @@ namespace ExamProject
 
         public void Print()
         {
-                     
+                 
            
             if (First() == null)
             {
@@ -204,11 +240,13 @@ namespace ExamProject
             }        
             else
             {
-              int i;
-              for (i = 1; i <= size; i++)
-                  Console.WriteLine("{0}", node.nodeData);
-                   node = node.nextNode;
-               
+                Node<T> tempPrint = node;
+                int i;
+                for (i = 1; i <= size; i++)
+              {
+                  Console.WriteLine("{0}", tempPrint.nodeData);
+                 tempPrint = tempPrint.nextNode;
+              }
              }
            
          }

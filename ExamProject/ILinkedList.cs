@@ -10,7 +10,7 @@ namespace ExamProject
     {
         void AddFirst(T value);
         void AddLast(T value);
-        //void Remove(T value);
+        void Remove(T value);
         void RemoveFirst();
         void RemoveLast();
         bool Find(T value);
