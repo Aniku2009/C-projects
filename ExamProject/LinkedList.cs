@@ -52,7 +52,7 @@ namespace ExamProject
             }
             else
             {
-                while (true)
+                while (node.nextNode != null)
                 {
                     if (node.nodeData.Equals(value))
                     {
@@ -74,14 +74,15 @@ namespace ExamProject
                             break;
                         }
                     }
-                    else if (node.prevNode == null)
+                    else /*if (node.nextNode == null)*/
                     {
-                        break;
+                        //break;
+                        node = node.nextNode;
                     }
-                    else
-                    {
-                        node = node.prevNode;
-                    }
+                    //else
+                    //{
+                    //    node = node.nextNode;
+                    //}
                 }
             }
         }
@@ -91,8 +92,12 @@ namespace ExamProject
 
         public void RemoveFirst()
         {
-            while (true)
-            {
+            //while (node.prevNode == null)
+            Node<T> tempPrint = node;
+                int i; 
+            for (i = 1; i <= size; i++)
+              {
+               
                 if (node == null)
                 {
                     break;
@@ -110,32 +115,14 @@ namespace ExamProject
                 }
             }
         }
-        //
-        //{
-        //        while (true)
-        //    {
-        //        if (node == null)
-        //        {
-        //            break;
-        //        }
-        //        else if (node.prevNode == null)
-        //        {
-        //            Node<T> temp = node.prevNode;
-        //            node.nextNode.prevNode = null;
-        //            //node.prevNode.nextNode = node.nextNode;
-        //            node.nextNode.prevNode = temp;
-        //            size--;
-        //            break;
-        //        }
-        //        else
-        //        {
-        //            node = node.prevNode;
-        //        }
-        //    }
-        //}
+ 
         public void RemoveLast()
+
         {
-            while (true)
+           // while (node.nextNode != null)
+             Node<T> tempPrint = node;
+                int i; 
+            for (i = 1; i <= size; i++)
             {
                 if (node == null)
                 {
@@ -154,10 +141,11 @@ namespace ExamProject
                 }
             }
         }
-        //
+        
        
         public bool Find(T value)
         {
+            node = First();
             
             if (node == null)
             {
@@ -181,7 +169,7 @@ namespace ExamProject
                     }
                     else
                     {
-                        node = node.prevNode;
+                        node = node.nextNode;
                     }
                 
                 }

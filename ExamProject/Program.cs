@@ -19,16 +19,18 @@ namespace ExamProject
             list.AddLast("last again");
             list.AddLast("now really last");
             list.Print();
+            Console.WriteLine("");
             list.Find("first");
+            Console.WriteLine("");
             Console.WriteLine("--------now delete First-----------");
             list.RemoveFirst();
             list.Print();
-            Console.WriteLine("--------now delete Last-----------");
+            Console.WriteLine("--------now delete Last node in the list-----------");
             list.RemoveLast();
             list.Print();
-            Console.WriteLine("--------now delete with value (second)-----------");
-            list.Remove("second");
-           
+            Console.WriteLine("--------now delete with value (last)-----------");
+            list.Remove("last");
+            list.Print();
             Console.ReadKey();
         }
     }

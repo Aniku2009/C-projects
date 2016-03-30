@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamProject
 {
-    public interface ISortable
+    public interface ISortable : IPrintable
     {
         void Sort();
     }
