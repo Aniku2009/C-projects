@@ -1,0 +1,15 @@
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\bin\Debug\Array.exe.config
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\bin\Debug\Array.exe
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\bin\Debug\Array.pdb
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\obj\Debug\Array.csprojResolveAssemblyReference.cache
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\obj\Debug\Array.exe
+c:\users\andriyn\documents\visual studio 2013\Projects\Array\Array\obj\Debug\Array.pdb
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Array - Copy\Array\bin\Debug\Array.exe.config
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Array - Copy\Array\obj\Debug\Array.exe
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Array - Copy\Array\obj\Debug\Array.pdb
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\bin\Debug\Array.exe.config
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\obj\Debug\Array.exe
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\obj\Debug\Array.pdb
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\bin\Debug\Array.exe
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\bin\Debug\Array.pdb
+C:\Users\andriyn\Documents\Visual Studio 2013\Projects\Old\+Static dynamic array\Array\obj\Debug\Array.csprojResolveAssemblyReference.cache
